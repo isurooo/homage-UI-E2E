@@ -1,0 +1,15 @@
+{
+  "name": "homageautomation",
+  "version": "1.0.0",
+  "description": "Homage e2e automation",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "Isuru Rodrigo",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.3.1"
+  }
+
+}
