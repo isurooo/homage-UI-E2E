@@ -4,12 +4,17 @@
   "description": "Homage e2e automation",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:runner": "cypress open",
+    "cypress:execution": "cypress run"
   },
   "author": "Isuru Rodrigo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.3.1"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "cypress": "^10.3.1",
+    "esbuild": "^0.14.51"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^11.5.1"
   }
-
 }
