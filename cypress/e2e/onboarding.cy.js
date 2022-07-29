@@ -6,8 +6,8 @@ describe('Get URL', () => {
    cy.visit('https://apply.homage.sg/');
   })
 
-  describe('Click submit button', () => {
-    it("User details", () => {
+  describe('Enter user details', () => {
+    it("Submit user details", () => {
       applyHomagePage.typeFirstname('Michael');
       applyHomagePage.typeLastname('Jordan');
 
@@ -17,9 +17,9 @@ describe('Get URL', () => {
         randomString += chars[Math.floor(Math.random() * chars.length)];
       }
       applyHomagePage.typeEmail(randomString + '@homage.com');
+      
       applyHomagePage.typePhone('82860123');
       applyHomagePage.typeDob('12/10/1989');
-      
       applyHomagePage.clickNationality();
       applyHomagePage.selectNationality();
 
@@ -37,7 +37,9 @@ describe('Get URL', () => {
       cy.get('.cpf-check').click()
 
       //Click submit
-      applyHomagePage.clickSubmit()
+    // applyHomagePage.clickSubmit()
+     //Verify the title after submit
+     applyHomagePage.elements.titleHeader().should('have.text','Your application has been submitted!')
 
     })
 

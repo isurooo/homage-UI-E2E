@@ -12,6 +12,8 @@ class applyHomePage{
         hearAboutSelect:()=> cy.get('[data-value="YouTube"]'), 
         hearAboutDDL: ()=> cy.get('#source'),
         submitBtn:() => cy.get('.cpf-submit'),
+        titleHeader:()=> cy.get('h1'),
+        
     }
 
 typeFirstname(firstname){
@@ -45,6 +47,8 @@ clickNationality(){
 clickSubmit(){
 this.elements.submitBtn().click();
 }
+
+
 
 }
 
