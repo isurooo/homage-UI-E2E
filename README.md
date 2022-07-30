@@ -36,7 +36,7 @@ npm install cypress
 
 
 
-1. Run 
+1. Run the code in the terminial 
 ```
 npm run cypress:open
 ```
@@ -57,7 +57,7 @@ This opens the cypress application.
  
 ### How to run the Cypress test
 
-1. Run
+1. Run the code in the terminial 
 ```
 npm run cypress:run
 ```
