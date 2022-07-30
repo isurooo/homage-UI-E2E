@@ -3,7 +3,7 @@ class applyHomePage {
 
     elements = {
         locationDDL: () => cy.get('#location'),
-        locationSelect: () => cy.get('.MuiList-root > [tabindex="0"]'), // Need to change this elementID to a stable one.
+        locationSelect: () => cy.get('.MuiList-root > [tabindex="0"]'), // Need to change this element ID to a stable one.
         firstnameInput: () => cy.get('#firstName'),
         lastnameInput: () => cy.get('#lastName'),
         emailInput: () => cy.get('#email'),
@@ -15,17 +15,23 @@ class applyHomePage {
         hearAboutDDL: () => cy.get('#source'),
         submitBtn: () => cy.get('.cpf-submit'),
         titleHeader: () => cy.get('h1'),
-        yesBtn: () => cy.contains('Yes'),
-        noBtn:() => cy.contains('No'),
-        selectExperience: () =>  cy.contains('4 to 6'),
+        yesBtn: () => cy.get('.cpf-box').contains('Yes'),
+        noBtn: () => cy.get(':nth-child(16) > :nth-child(2)'), // Need to change this element ID to a stable one.
+        selectExperience: () => cy.contains('4 to 6'),
         selectRoles: () => cy.contains('Therapy Assistant'),
         selectJobOpportunities: () => cy.contains('Covid Assignments'),
         selectEngagementTypes: () => cy.contains('Freelance'),
         checkAcknowledgement: () => cy.get('.cpf-check'),
 
+        declarationError: () => cy.get('#declarationName-helper-text'),
+        firstNameError: () => cy.get('#firstName-helper-text'),
+        lastNameError: () => cy.get('#lastName-helper-text'),
+        emailError: () => cy.get('#email-helper-text'),
+        phoneError: () => cy.get('#phone-helper-text'),
+        dobError: () => cy.get('#dob-helper-text'),
+
 
     }
-
 
 
     clickLocation() {
@@ -90,6 +96,15 @@ class applyHomePage {
 
     clickAcknowledgement() {
         this.elements.checkAcknowledgement().click();
+    }
+
+    getRandomEmail(randomString) {
+        var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        var randomString = '';
+        for (var i = 0; i < 15; i++) {
+            randomString += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return randomString
     }
 }
 

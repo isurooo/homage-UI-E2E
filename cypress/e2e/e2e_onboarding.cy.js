@@ -3,7 +3,7 @@ import applyHomagePage from '../page/homagedemo/applyHomage'
 
 describe('Get URL', () => {
     it('Access the homage homepage', () => {
-        cy.visit('https://apply.homage.sg/');
+        cy.visit('/');
     })
 
     describe('Enter user details', () => {
@@ -14,13 +14,7 @@ describe('Get URL', () => {
             //Basic Details
             applyHomagePage.typeFirstname('Michael');
             applyHomagePage.typeLastname('Jordan');
-
-            var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-            var randomString = '';
-            for (var i = 0; i < 15; i++) {
-                randomString += chars[Math.floor(Math.random() * chars.length)];
-            }
-            applyHomagePage.typeEmail(randomString + '@homage.com');
+            applyHomagePage.typeEmail(applyHomagePage.getRandomEmail() + '@homage.com');
 
             applyHomagePage.typePhone('82860123');
             applyHomagePage.typeDob('12/10/1989');
