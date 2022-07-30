@@ -62,16 +62,3 @@ This opens the cypress application.
 npm run cypress:run
 ```
 This opens the headless browser testing.
-
-
-
-
-
-
-
-
-
-
-
-
-[![Homage_UI_e2e](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/e6kf48&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/e6kf48/runs)
